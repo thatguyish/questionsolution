@@ -26,7 +26,6 @@ public class OverloadingAndSuper {
         }
 
         //overrides method inherited by super class
-        // then calls method using super keyword
         @Override
         public double calculateArea() {
             return this.sideA * this.sideD;
@@ -35,6 +34,13 @@ public class OverloadingAndSuper {
         //overloads previous method adding additional functionality based on parameters
         public static double calculateArea(double length,double width){
             return length * width;
+        }
+
+        //overloads method this time accepting String as a parameter
+        public double calculateArea(String length,String width){
+            double widthAsDouble = Double.parseDouble(length);
+            double lengthAsDouble = Double.parseDouble(width);
+            return  widthAsDouble * lengthAsDouble;
         }
     }
 
@@ -70,6 +76,7 @@ public class OverloadingAndSuper {
         //area of any rectangle or square
         System.out.println(Square.calculateArea(5));
         System.out.println(Rectangle.calculateArea(12,9));
+        System.out.println(rectangleB.calculateArea("10","5"));
     }
 
 
