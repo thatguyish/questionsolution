@@ -12,6 +12,7 @@ public class OverloadingAndSuper {
             this.sideD = sideD;
         }
 
+        //method being inherited by square and rectangle
         public double calculateArea(){
             return 0;
         }
@@ -24,11 +25,14 @@ public class OverloadingAndSuper {
             super(length,length,width,width);
         }
 
+        //overides method inherited by super class
+        // then calls method using super keyword
         @Override
         public double calculateArea() {
             return this.sideA * this.sideD;
         }
 
+        //overloads previous method adding additional functionality based on parameters
         public static double calculateArea(double length,double width){
             return length * width;
         }
@@ -40,11 +44,14 @@ public class OverloadingAndSuper {
             super(side,side,side,side);
         }
 
+        //overides method inherited by super class
+        //then calls method using super keyword
         @Override
         public double calculateArea() {
-            return Math.pow(this.sideA,2);
+            return super.calculateArea() + Math.pow(this.sideA,2);
         }
 
+        //overloads previous method adding additional functionality based on parameters
         public static double calculateArea(double side) {
             return Math.pow(side,2);
         }
@@ -52,12 +59,12 @@ public class OverloadingAndSuper {
 
     public static void main(String[] args) {
         //create a new instance of rectange and squre
-        Rectangle rectangle = new Rectangle(10,5);
-        Square square = new Square(4);
+        Rectangle rectangleB = new Rectangle(10,5);
+        Square squareA = new Square(4);
 
         // calculate area of rectangle and square previously made
-        System.out.println(rectangle.calculateArea());
-        System.out.println(square.calculateArea());
+        System.out.println(rectangleB.calculateArea());
+        System.out.println(squareA.calculateArea());
 
         //use static methods in square and rectangle to calculate
         //area of any rectangle or square
