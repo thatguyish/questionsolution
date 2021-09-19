@@ -118,6 +118,8 @@ Create a method to calculate the area of the rectangle
             this.length = length;
         }
 
+
+
         @Override
         public double calculateArea(){
             return Math.pow(this.length,2);
