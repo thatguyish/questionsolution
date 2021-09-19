@@ -26,7 +26,7 @@ public class OverloadingAndSuper {
 
         @Override
         public double calculateArea() {
-            return super.calculateArea();
+            return this.sideA * this.sideD;
         }
 
         public static double calculateArea(double length,double width){
@@ -42,7 +42,7 @@ public class OverloadingAndSuper {
 
         @Override
         public double calculateArea() {
-            return super.calculateArea();
+            return Math.pow(this.sideA,2);
         }
 
         public static double calculateArea(double side) {
@@ -51,16 +51,17 @@ public class OverloadingAndSuper {
     }
 
     public static void main(String[] args) {
+        //create a new instance of rectange and squre
         Rectangle rectangle = new Rectangle(10,5);
-
         Square square = new Square(4);
 
+        // calculate area of rectangle and square previously made
         System.out.println(rectangle.calculateArea());
-
         System.out.println(square.calculateArea());
 
+        //use static methods in square and rectangle to calculate
+        //area of any rectangle or square
         System.out.println(Square.calculateArea(5));
-
         System.out.println(Rectangle.calculateArea(12,9));
     }
 
