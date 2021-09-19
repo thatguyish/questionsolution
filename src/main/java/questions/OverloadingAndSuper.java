@@ -25,7 +25,7 @@ public class OverloadingAndSuper {
             super(length,length,width,width);
         }
 
-        //overides method inherited by super class
+        //overrides method inherited by super class
         // then calls method using super keyword
         @Override
         public double calculateArea() {
@@ -44,7 +44,7 @@ public class OverloadingAndSuper {
             super(side,side,side,side);
         }
 
-        //overides method inherited by super class
+        //overrides method inherited by super class
         //then calls method using super keyword
         @Override
         public double calculateArea() {
@@ -58,7 +58,7 @@ public class OverloadingAndSuper {
     }
 
     public static void main(String[] args) {
-        //create a new instance of rectange and squre
+        //create a new instance of rectangle and square
         Rectangle rectangleB = new Rectangle(10,5);
         Square squareA = new Square(4);
 
